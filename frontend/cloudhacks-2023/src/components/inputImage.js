@@ -34,7 +34,7 @@ const ImageUpload = () => {
   };
 
   return (
-    <div className="inputimage-container" style={{ border: "2px solid #000" }}>
+    <div className="inputimage-container">
       <p>
         Step 2:
         <span style={{ fontSize: "25px", fontWeight: "bold" }}>

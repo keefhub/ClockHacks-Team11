@@ -7,10 +7,15 @@ import Ingestion from "./components/ingestion";
 function App() {
   return (
     <div className="App">
-      <Chatbox />
-      <FileUpload />
-      <ImageUpload />
-      <Ingestion />
+      <div className="App-cols1">
+        <FileUpload />
+        <ImageUpload />
+        <Ingestion />
+      </div>
+
+      <div className="App-cols2">
+        <Chatbox />
+      </div>
     </div>
   );
 }

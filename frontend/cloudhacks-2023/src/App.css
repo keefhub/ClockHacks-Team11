@@ -6,16 +6,33 @@
 
 .App {
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+
+.App-cols1 {
+  padding: 10px;
+}
+
+.App-cols2 {
+  padding: 10px;
 }
 
 .chatbox {
   padding: 1px;
+  height: 500px;
+  width: 90%;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
+
 .chatbox-input {
   border-radius: 15px;
   height: 40px;
-  width: 300px;
-  text-align: center;
+  width: 90%;
+  text-align: left;
 }
 
 .fileupload {
