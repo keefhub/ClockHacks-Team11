@@ -1,16 +1,21 @@
 import "./App.css";
-import Chatbox from "./pages/chatbox";
-import FileUpload from "./pages/inputFile";
-import ImageUpload from "./pages/inputImage";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Chatbox from "./components/chatbox";
+import FileUpload from "./components/inputFile";
+import ImageUpload from "./components/inputImage";
+import Ingestion from "./components/ingestion";
 
 function App() {
   return (
     <div className="App">
-      <Chatbox />
-      <FileUpload />
-      <ImageUpload />
+      <div className="App-cols1">
+        <FileUpload />
+        <ImageUpload />
+        <Ingestion />
+      </div>
+
+      <div className="App-cols2">
+        <Chatbox />
+      </div>
     </div>
   );
 }
