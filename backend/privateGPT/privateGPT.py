@@ -48,7 +48,7 @@ def privateQuery(user_query):
     time_taken = str(round(end - start, 2))
     documents = []
     for document in docs:
-        documents.append([document.metadata,document.page_content])
+        documents.append([document.metadata,{"content" : document.page_content}])
     # Return the result
     return time_taken,answer,documents
 

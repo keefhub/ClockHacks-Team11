@@ -25,7 +25,14 @@ def allowed_file(filename):
 def query():
     if request.form:
         user_question = request.form.get('user_text', '')
-        llm_output = privateQuery(user_question)
+        time_taken,answer,documents = privateQuery(user_question)
+        llm_output = ""
+        llm_output += "time taken: " + str(time_taken) + "s\n"
+        llm_output += str(answer) + "\n=================================================\n"
+        for document in documents:
+            llm_output += document[0]['source'] + "\n=================================================\n"
+            llm_output += document[1]['content']
+
         return jsonify({'output':llm_output}),200
 
 @app.route('/api/ingest', methods=['GET'])
