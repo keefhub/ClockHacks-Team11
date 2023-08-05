@@ -18,12 +18,12 @@ const Chatbot = () => {
     };
     setTimeout(() => {
       setMessages((prevMessages) => [...prevMessages, botResponse]);
-    }, 800); // Simulate bot response time
+    }, 800);
   };
 
   return (
     <div>
-      <h1>Input your files here</h1>
+      <h1>Input your question here</h1>
       <div className="chatbox">
         {messages.map((message, index) => (
           <div
