@@ -22,23 +22,13 @@ const Chatbot = () => {
       });
   };
 
-  const handleUserInput = (inputText) => {
+  const HandleUserInput = (inputText) => {
     const userMessage = {
       text: inputText,
       sender: "user",
     };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     sendQueryToBackend(inputText);
-
-    const botResponse = {
-      text: "Typing...",
-      sender: "bot",
-    };
-    setMessages((prevMessages) => [...prevMessages, botResponse]);
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [...prevMessages, botResponse]);
-    }, 800);
   };
 
   useEffect(() => {
@@ -49,6 +39,17 @@ const Chatbot = () => {
     };
     setMessages([botResponse]);
   }, []);
+
+  useEffect(() => {
+    // Check if the last message is from the bot
+    if (messages.length > 0) {
+      const lastMessage = messages[messages.length - 1];
+      if (lastMessage.sender === "user") {
+        // Trigger the API call to get the bot response
+        sendQueryToBackend(lastMessage.text);
+      }
+    }
+  }, [messages]);
 
   return (
     <div className="chatbox-container">
@@ -76,7 +77,7 @@ const Chatbot = () => {
         placeholder="Type your message..."
         onKeyDown={(e) => {
           if (e.key === "Enter" && e.target.value.trim() !== "") {
-            handleUserInput(e.target.value.trim());
+            HandleUserInput(e.target.value.trim());
             e.target.value = "";
           }
         }}
