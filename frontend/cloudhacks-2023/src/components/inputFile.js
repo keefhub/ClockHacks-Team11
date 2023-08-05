@@ -11,7 +11,7 @@ const FileUpload = () => {
     setSelectedFile(file);
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (selectedFile) {
       console.log("Selected file:", selectedFile);
     } else {
@@ -19,8 +19,10 @@ const FileUpload = () => {
     }
 
     const formData = new FormData();
-    axios
-      .post("http://localhost:5000/api/upload", formData)
+    formData.append("file", selectedFile);
+
+    await axios
+      .post("http://localhost:5000/api/upload-file", formData)
       .then((response) => {
         console.log(response.data.message);
       })

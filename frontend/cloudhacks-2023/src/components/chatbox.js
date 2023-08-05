@@ -23,7 +23,6 @@ const Chatbot = () => {
 
   return (
     <div>
-      <h1>Input your question here</h1>
       <div className="chatbox">
         {messages.map((message, index) => (
           <div

@@ -1,7 +1,7 @@
 import "./App.css";
-import Chatbox from "./pages/chatbox";
-import FileUpload from "./pages/inputFile";
-import ImageUpload from "./pages/inputImage";
+import Chatbox from "./pages/ChatboxPage";
+import FileUpload from "./pages/FileUploadPage";
+import ImageUpload from "./pages/ImageUploadPage";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

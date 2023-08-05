@@ -10,15 +10,17 @@ const ImageUpload = () => {
   };
 
   const handleUpload = () => {
-    if (!selectedFile) {
-      return;
+    if (selectedFile) {
+      console.log("Selected file:", selectedFile);
+    } else {
+      console.log("error occuered");
     }
 
     const formData = new FormData();
     formData.append("image", selectedFile);
 
     axios
-      .post("http://localhost:5000/api/upload", formData, {
+      .post("http://localhost:5000//api/upload-image", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
