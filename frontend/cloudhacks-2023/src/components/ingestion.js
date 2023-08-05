@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
 
 const Ingestion = () => {
+  const [data, setData] = useState([]);
+
+  const IngestingData = () => {
+    axios
+      .get("http://localhost:5000/api/ingest")
+      .then((response) => {
+        setData(response.data);
+        alert("data ingested! GPT4All is now more knowledgeable");
+      })
+      .catch((error) => console.error("Error ingesting data", error));
+  };
+
   return (
     <div className="ingestion-container">
       <p>
@@ -10,7 +23,9 @@ const Ingestion = () => {
           Ingest your data with this button
         </span>
       </p>
-      <button className="ingestion-button">Ingest your files here</button>
+      <button className="ingestion-button" onClick={IngestingData}>
+        Ingest your files here
+      </button>
     </div>
   );
 };
