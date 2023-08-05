@@ -1,10 +1,12 @@
 import "./App.css";
-import HomePage from "./pages/Homepage";
+import Chatbox from "./pages/chatbox";
+import FileUpload from "./pages/inputFile";
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <Chatbox />
+      <FileUpload />
     </div>
   );
 }
