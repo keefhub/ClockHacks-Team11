@@ -38,17 +38,19 @@ def privateQuery(user_query):
             # raise exception if model_type is not supported
             raise Exception(f"Model type {model_type} is not supported. Please choose one of the following: LlamaCpp, GPT4All")
         
-    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
+    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True)
 
     # Get the answer from the chain
     start = time.time()
     res = qa(user_query)
-    #answer, docs = res['result'], res['source_documents']
+    answer, docs = res['result'], res['source_documents']
     end = time.time()
     time_taken = str(round(end - start, 2))
-    
+    documents = []
+    for document in docs:
+        documents.append([document.metadata,document.page_content])
     # Return the result
-    return res,time_taken
+    return time_taken,answer,documents
 
 def main():
     # Parse the command line arguments
