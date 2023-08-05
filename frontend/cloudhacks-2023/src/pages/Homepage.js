@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -22,6 +23,7 @@ const Chatbot = () => {
 
   return (
     <div>
+      <h1>Input your files here</h1>
       <div className="chatbox">
         {messages.map((message, index) => (
           <div
@@ -33,6 +35,7 @@ const Chatbot = () => {
         ))}
       </div>
       <input
+        className="chatbox-input"
         type="text"
         placeholder="Type your message..."
         onKeyDown={(e) => {
