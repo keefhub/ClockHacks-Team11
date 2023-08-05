@@ -34,8 +34,13 @@ const ImageUpload = () => {
   };
 
   return (
-    <div>
-      <h1>Input your images here</h1>
+    <div className="inputimage-container" style={{ border: "2px solid #000" }}>
+      <p>
+        Step 2:
+        <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+          Input your image here
+        </span>
+      </p>
       <input type="file" onChange={handleFileChange} />
       <button
         className="button"

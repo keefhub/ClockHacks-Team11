@@ -1,9 +1,8 @@
 import "./App.css";
-import Chatbox from "./pages/ChatboxPage";
-import FileUpload from "./pages/FileUploadPage";
-import ImageUpload from "./pages/ImageUploadPage";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Chatbox from "./components/chatbox";
+import FileUpload from "./components/inputFile";
+import ImageUpload from "./components/inputImage";
+import Ingestion from "./components/ingestion";
 
 function App() {
   return (
@@ -11,6 +10,7 @@ function App() {
       <Chatbox />
       <FileUpload />
       <ImageUpload />
+      <Ingestion />
     </div>
   );
 }

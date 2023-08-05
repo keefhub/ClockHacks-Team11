@@ -32,8 +32,13 @@ const FileUpload = () => {
   };
 
   return (
-    <div>
-      <h1>Input your files here</h1>{" "}
+    <div className="inputfile-container">
+      <p>
+        Step 1:{" "}
+        <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+          Input your files here
+        </span>
+      </p>
       <div className="fileupload">
         <input type="file" onChange={handleFileChange} />
         <button

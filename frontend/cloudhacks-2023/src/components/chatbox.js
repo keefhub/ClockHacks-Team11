@@ -22,7 +22,13 @@ const Chatbot = () => {
   };
 
   return (
-    <div>
+    <div className="chatbox-container">
+      <p>
+        Final Step:
+        <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+          Input your questions here
+        </span>{" "}
+      </p>
       <div className="chatbox">
         {messages.map((message, index) => (
           <div
