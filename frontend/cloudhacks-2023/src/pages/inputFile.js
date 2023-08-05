@@ -30,11 +30,14 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="fileupload">
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload} disabled={!selectedFile}>
-        Upload
-      </button>
+    <div>
+      <h1>Input your files here</h1>{" "}
+      <div className="fileupload">
+        <input type="file" onChange={handleFileChange} />
+        <button onClick={handleUpload} disabled={!selectedFile}>
+          Upload
+        </button>
+      </div>
     </div>
   );
 };
