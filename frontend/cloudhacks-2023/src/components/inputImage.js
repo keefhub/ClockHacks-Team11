@@ -10,15 +10,17 @@ const ImageUpload = () => {
   };
 
   const handleUpload = () => {
-    if (!selectedFile) {
-      return;
+    if (selectedFile) {
+      console.log("Selected file:", selectedFile);
+    } else {
+      console.log("error occuered");
     }
 
     const formData = new FormData();
     formData.append("image", selectedFile);
 
     axios
-      .post("http://localhost:5000/api/upload", formData, {
+      .post("http://localhost:5000//api/upload-image", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -32,8 +34,13 @@ const ImageUpload = () => {
   };
 
   return (
-    <div>
-      <h1>Input your images here</h1>
+    <div className="inputimage-container" style={{ border: "2px solid #000" }}>
+      <p>
+        Step 2:
+        <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+          Input your image here
+        </span>
+      </p>
       <input type="file" onChange={handleFileChange} />
       <button
         className="button"
