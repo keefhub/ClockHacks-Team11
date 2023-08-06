@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
+import "/home/kali/Desktop/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
 
 const Ingestion = () => {
   const [data, setData] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
+import "/home/kali/Desktop/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -18,7 +18,7 @@ const Chatbot = () => {
         setMessages((prevMessages) => [...prevMessages, botResponse]);
       })
       .catch((error) => {
-        console.error("Error sedning query", error);
+        console.error("Error sending query", error);
       });
   };
 
@@ -40,16 +40,7 @@ const Chatbot = () => {
     setMessages([botResponse]);
   }, []);
 
-  useEffect(() => {
-    // Check if the last message is from the bot
-    if (messages.length > 0) {
-      const lastMessage = messages[messages.length - 1];
-      if (lastMessage.sender === "user") {
-        // Trigger the API call to get the bot response
-        sendQueryToBackend(lastMessage.text);
-      }
-    }
-  }, [messages]);
+
 
   return (
     <div className="chatbox-container">

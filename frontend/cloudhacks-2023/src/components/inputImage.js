@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
+import "/home/kali/Desktop/CloudHacks-Team11/frontend/cloudhacks-2023/src/App.css";
 import axios from "axios";
 
 const ImageUpload = () => {
@@ -27,6 +27,7 @@ const ImageUpload = () => {
       })
       .then((response) => {
         console.log(response.data.message);
+        alert(response.data.message);
       })
       .catch((error) => {
         console.error("Error uploading image:", error);

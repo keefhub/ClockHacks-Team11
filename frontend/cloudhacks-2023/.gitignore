@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/home/john/CloudHacks-Team11/frontend/cloudhacks-2023/node_modules
+/home/kali/Desktop/CloudHacks-Team11/frontend/cloudhacks-2023/node_modules
 /.pnp
 .pnp.js
 

@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 
 /Test
+/frontend/cloudhacks-2023/node_modules
