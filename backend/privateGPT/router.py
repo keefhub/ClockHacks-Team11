@@ -32,15 +32,14 @@ def query():
         #user_question = request.form.get('query', '')
         time_taken,answer,documents = privateQuery(user_question)
         llm_output = ""
-        llm_output += "time taken: " + str(time_taken) + "s"
-        llm_output += "================================================="
         llm_output += str(answer)
-        llm_output += "================================================="
+        llm_output += "===["
         for document in documents:
             llm_output += document[0]['source'] 
-            llm_output += "================================================="
+            llm_output += "]==="
             llm_output += document[1]['content']
-            llm_output += "================================================="
+            llm_output += "==="
+        llm_output += "[time taken: " + str(time_taken) + "s]"
 
         return jsonify({'output':llm_output}),200
 
