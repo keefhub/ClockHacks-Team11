@@ -40,6 +40,15 @@ const Chatbot = () => {
     setMessages([botResponse]);
   }, []);
 
+  const renderMessageText = (text) => {
+    return text.split("===").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
 
 
   return (
@@ -58,7 +67,7 @@ const Chatbot = () => {
             className={`message ${message.sender === "bot" ? "bot" : "user"}`}
           >
             {message.sender === "bot" ? "bot: " : "user: "}
-            {message.text}
+            {renderMessageText(message.text)}
           </div>
         ))}
       </div>

@@ -21,10 +21,12 @@
 
 .chatbox {
   padding: 1px;
-  height: 500px;
+  height: 600px;
   width: 90%;
   border: 1px solid #000;
   margin-bottom: 20px;
+  max-width : 100%;
+  overflow:auto;
 }
 
 .chatbox-input {
@@ -32,6 +34,12 @@
   height: 40px;
   width: 90%;
   text-align: left;
+}
+
+.message.bot, .message.user{
+  max-width : 80%;
+  overflow-wrap: break-word;
+  
 }
 
 .fileupload {
